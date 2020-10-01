@@ -2,7 +2,7 @@ class Wizard extends Character {
   constructor(name) {
     super(name);
     this.className = "Magicien";
-    this.hp = 10;
+    this.hp = 11;
     this.dmg = 2;
     this.spellName = "Boule de feu";
     this.max_mana = 200;
@@ -13,7 +13,7 @@ class Wizard extends Character {
   fireball = (ennemy) => {
     if(this.castingSpell() ) {
       console.log(`${this.name} lance une énorme boule de feu en direction de l'ennemi !`);
-      this.dealDamage(ennemy, 7);
+      this.dealDamage(ennemy, 5);
     }
   }
 }

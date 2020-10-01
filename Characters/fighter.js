@@ -3,7 +3,7 @@ class Fighter extends Character {
     super(name);
     this.className = "Chevalier";
     this.hp = 12; 
-    this.dmg = 4;
+    this.dmg = 3;
     this.spellName = "Vision ténébreuse";
     this.max_mana = 40;
     this.mana = 40;

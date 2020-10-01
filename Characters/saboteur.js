@@ -2,7 +2,7 @@ class Saboteur extends Character {
   constructor(name) {
     super(name);
     this.className = "Saboteur";
-    this.hp = 8;
+    this.hp = 11;
     this.dmg = 3;
     this.spellName = "Sabotage";
     this.max_mana = 100;

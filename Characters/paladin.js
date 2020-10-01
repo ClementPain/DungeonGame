@@ -3,7 +3,7 @@ class Paladin extends Character {
     super(name);
     this.className = "Paladin";
     this.hp = 16;    
-    this.dmg = 3;
+    this.dmg = 2;
     this.spellName = "Lumière divine"
     this.max_mana = 160;
     this.mana = 160;

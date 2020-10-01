@@ -3,7 +3,7 @@ class Monk extends Character {
     super(name);
     this.className = "Moine";
     this.hp = 8;
-    this.dmg = 2;
+    this.dmg = 3;
     this.spellName = "Soin";
     this.max_mana = 200;
     this.mana = 200;
