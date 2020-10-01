@@ -1,0 +1,1 @@
+Lancer le fichier html dans le navigateur puis afficher la console
