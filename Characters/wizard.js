@@ -13,7 +13,7 @@ class Wizard extends Character {
   fireball = (ennemy) => {
     if(this.castingSpell() ) {
       console.log(`${this.name} lance une énorme boule de feu en direction de l'ennemi !`);
-      this.dealDamage(ennemy, 5);
+      this.dealDamage(ennemy, this.dmg + 4);
     }
   }
 }

@@ -14,7 +14,7 @@ class Paladin extends Character {
     if(this.castingSpell() ) {
       this.hp <= 11 ? this.hp += 5 : this.hp = 16; // heal max 16
       console.log(`${this.name} se soigne 5 points de vie et a maintenant ${this.hp} points de vie`);
-      this.dealDamage(ennemy, 4); // damage
+      this.dealDamage(ennemy, this.dmg + 2); // damage
     }
   }
 }

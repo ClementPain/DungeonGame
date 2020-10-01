@@ -2,8 +2,8 @@ class Assassin extends Character {
   constructor(name) {
     super(name);
     this.className = "Assassin";
-    this.hp = 6;
-    this.dmg = 6;
+    this.hp = 7;
+    this.dmg = 5;
     this.spellName = "Frappe de l'ombre";
     this.max_mana = 20;
     this.mana = 20;
@@ -22,14 +22,14 @@ class Assassin extends Character {
     console.log(`${this.name} sort de la pénombre !`);
     this.shadowParams = [0, 0];
 
-    this.dealDamage(ennemy, 7);
+    this.dealDamage(ennemy, this.dmg + 1);
 
     if ( ennemy.status === "loser" ) {
       console.log(`${this.name} a réussi la Frappe de l'Ombre !`);
       this.mana += 20;
     } else if ( ennemy.status === "playing" ) {
       console.log(`${this.name} devient fou! Il subit des dégâts`);
-      this.takeDamage(this, 7); 
+      this.takeDamage(this, this.dmg + 1); 
     }
 
     

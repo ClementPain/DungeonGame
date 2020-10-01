@@ -15,7 +15,7 @@ class Fighter extends Character {
     if(this.castingSpell() ) {
       this.shield = [2, 2];
       console.log(`${this.name} lève son bouclier et a maintenant 2 points d'armure`);
-      this.dealDamage(ennemy, 5);
+      this.dealDamage(ennemy, this.dmg + 2);
     }
   }
 

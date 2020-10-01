@@ -90,9 +90,8 @@ class Game {
 
   turnPlayer = (thisPlayer) => {
     if ( this.checkForWinner() === false ) {
-      // faire baisser la durée de vie du bouclier du chevalier et lancer la Frappe de l'ombre de l'assassin
-      if (thisPlayer.className === "Chevalier") { thisPlayer.shieldDuration() };
-      if (thisPlayer.className === "Assassin" && thisPlayer.shadowParams[0] === 1) { thisPlayer.shadowHit(thisPlayer.shadowParams[1]) };
+
+      this.checkForSpells(thisPlayer);    
 
       if (thisPlayer.status === "playing") { // check if assassin didn't kill himself with shadowHit
         let thisPlayerChoice = prompt(`${thisPlayer.name} - Que voulez-vous faire ? (1- Attaquer un joueur, 2- Utiliser ${thisPlayer.spellName}, 3- Consulter l'état des joueurs)`);
@@ -127,6 +126,12 @@ class Game {
     }
   }
 
+  checkForSpells = (thisPlayer) => {
+    if (thisPlayer.className === "Chevalier") { thisPlayer.shieldDuration() };
+    if (thisPlayer.className === "Moine") { thisPlayer.healReset() };
+    if (thisPlayer.className === "Assassin" && thisPlayer.shadowParams[0] === 1) { thisPlayer.shadowHit(thisPlayer.shadowParams[1]) };
+  }
+
   attackPlayers = (thisPlayer) => {
     let otherPlayers = this.players.filter(player => player != thisPlayer && player.status === "playing").map(player => player.name);
         
@@ -153,7 +158,7 @@ class Game {
         thisPlayer.healingLighting(this.choiceSpellTarget(thisPlayer));
         break;
       case 'Moine' :
-        thisPlayer.heal();
+        thisPlayer.heal(this.choiceSpellTarget(thisPlayer));
         break;
       case 'Guerrier' :
         thisPlayer.rage();
